@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- well. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>finite.pizza</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      span {
+        font-size: 12rem;
+      }
+    </style>
+  </head>
+  <body>
+    <span>🍕</span>
+    <script>
+      const randomIntRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+
+      const text = document.querySelector('span');
+
+      const loop = () => {
+        requestAnimationFrame(loop);
+        text.style.transform = `rotateZ(${randomIntRange(-45, 45)}deg)`;
+      };
+
+      requestAnimationFrame(loop);
+    </script>
+  </body>
+</html>
